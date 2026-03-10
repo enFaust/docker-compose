@@ -41,12 +41,12 @@ jobs:
       uses: docker/metadata-action@v5
       with:
         images: |
-          ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}
+          ghcr.io/${{ github.repository }}
+          ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.repository }}
         tags: |
           type=ref,event=branch
           type=ref,event=pr
-          type=sha,prefix={{branch}}-
+          type=sha
           type=raw,value=latest,enable={{is_default_branch}}
 
     - name: Build and push Docker image
