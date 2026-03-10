@@ -16,5 +16,3 @@ Pushes the image to Docker Hub
 Sends Slack notifications on success or failure
 
 ![devops-notification](image-1.png)
-
-
